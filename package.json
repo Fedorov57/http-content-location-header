@@ -1,0 +1,17 @@
+{
+  "name": "http-content-location-header",
+  "version": "0.1.0",
+  "description": "Resolves a Content-Location header against a base URL into an absolute URL without the fragment.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
