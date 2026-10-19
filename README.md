@@ -20,3 +20,10 @@ The deliberate trade-off: this library treats the header value as a single URI-r
 The function refuses a non-absolute base URL. If you pass `"/api"` as the base, it throws a `TypeError` rather than guessing. Use the request URL (scheme, host, and path) as the base, and pass the header value verbatim.
 
 Fragments are stripped. Content-Location identifies a resource, not a sub-section of a representation. If you need the fragment, you are working with a different header.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
